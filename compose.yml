@@ -1,0 +1,17 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: ${DB_USER:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
+      POSTGRES_DB: ${DB_NAME}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - 127.0.0.1:5432:5432
+    restart: always
+    command: [ "postgres", "-c", "wal_level=logical" ]
+
+volumes:
+  db_data:

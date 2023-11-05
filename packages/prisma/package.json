@@ -1,0 +1,19 @@
+{
+  "name": "@webauthn-expo/prisma",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "prisma generate",
+    "migrate": "prisma migrate dev"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.5.2",
+    "prisma": "^5.5.2"
+  }
+}
